@@ -1,0 +1,41 @@
+// メディアクエリー
+$breakpoints: (
+  'xss-max': '(max-width: 320px)',
+  'xs-max': '(max-width: 375px)',
+  'sm-max': '(min-width: 397px)',
+  'sm-min': '(min-width: 400px)',
+  'md-max': '(max-width: 767px)',
+  'md-min': '(min-width: 768px)',
+  'lg': '(min-width: 1000px)',
+  'xl': '(min-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md-min) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin sq($breakpoint: xss-max) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// Smartphone View (767 below)
+@mixin viewSp {
+  @mixin mq($breakpoint: md-max) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+}
+
+// PC View (768 above)
+@mixin viewPC {
+  @mixin mq($breakpoint: md-min) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  }
+}

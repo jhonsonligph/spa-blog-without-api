@@ -1,0 +1,15 @@
+.u-hidden-pc {
+  display: none;
+
+  @include viewSp {
+    display: block;
+  }
+}
+
+.u-hidden-sp {
+  display: block;
+
+  @include viewSp {
+    display: none;
+  }
+}

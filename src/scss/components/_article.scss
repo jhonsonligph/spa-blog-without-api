@@ -1,0 +1,42 @@
+.article {
+  background-color: grey;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  // .article__container
+  &__wrapper {
+    width: 100vw;
+  }
+
+  // .article__container
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    height: 666px;
+  }
+
+  // .article__title
+  &__title {
+    width: 585px;
+    font-size: 60px;;
+    color: white;
+    text-align: right;
+    
+    span {
+      display: inline-block;
+      margin-bottom: 10px;
+      background-color: black;
+    }
+  }
+
+  // .article__date
+  &__date {
+    font-family: $font-montserrat;
+    font-size: 28px;
+    letter-spacing: 0.2em;
+  }
+}
