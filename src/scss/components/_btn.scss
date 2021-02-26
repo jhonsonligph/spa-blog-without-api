@@ -10,6 +10,10 @@
   height: 70px;
   text-align: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &.btn--login {
     width: auto;
     height: auto;
@@ -17,8 +21,8 @@
     color: #000;
     background-color: transparent;
 
-    &:hover {
-      cursor: pointer;
-    }
+    // &:hover {
+    //   cursor: pointer;
+    // }
   }
 }

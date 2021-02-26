@@ -2,6 +2,10 @@
   padding: 30px 40px;
   border: thin solid black;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   &__eyecatch {
     width: 100%;
     padding-top: 200px;

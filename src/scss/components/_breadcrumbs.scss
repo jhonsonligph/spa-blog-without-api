@@ -1,0 +1,28 @@
+.breadcrumbs {
+  background-color: #F5F5F5;
+
+  &-inner {
+
+  }
+
+  &__list {
+    display: flex;
+    padding: 28px 0;
+    
+    &-item {
+      margin-right: 12px;
+
+      &:after {
+        display: inline-block;
+        content: ">";
+        padding-left: 12px;
+      }
+
+      &:last-child {
+        &:after {
+          content: "";
+        }
+      }
+    }
+  }
+}

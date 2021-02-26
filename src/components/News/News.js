@@ -1,58 +1,30 @@
-import React from 'react';
-import PostEyecatch from '../../img/blogpost-eyecatch.png';
+import React, { useState } from 'react';
+import Article from './Article'
+import ArticleData from '../../data/articles.json'
 
 const News = props => {
+  const [collapsed, setCollapsed] = useState(false);
+  const loadMoreHandler = () => {
+    setCollapsed(prevState => !prevState)
+  }
+  const isCollapsed = collapsed ? ' is-collapsed' : ''
+  const theHeight = collapsed ? 1944 : 972
+  const text = collapsed ? 'hide':'load more'
+
   return (
     <section className="l-container news">
       <div className="news__container">
         <h3 className="news__title">News</h3>
-        <ul className="news__list">
-          <li className="news__item">
-            <article className="post">
-              <div className="post__eyecatch" style={{ backgroundImage: `url(${PostEyecatch})` }}></div>
-              <div className="post__date">2019.06.19</div>
-              <h4 className="post__title">サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト</h4>
-            </article>
-          </li>
-          <li className="news__item">
-            <article className="post">
-              <div className="post__eyecatch" style={{ backgroundImage: `url(${PostEyecatch})` }}></div>
-              <div className="post__date">2019.06.19</div>
-              <h4 className="post__title">サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト</h4>
-            </article>
-          </li>
-          <li className="news__item">
-            <article className="post">
-              <div className="post__eyecatch" style={{ backgroundImage: `url(${PostEyecatch})` }}></div>
-              <div className="post__date">2019.06.19</div>
-              <h4 className="post__title">サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト</h4>
-            </article>
-          </li>
-          <li className="news__item">
-            <article className="post">
-              <div className="post__eyecatch" style={{ backgroundImage: `url(${PostEyecatch})` }}></div>
-              <div className="post__date">2019.06.19</div>
-              <h4 className="post__title">サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト</h4>
-            </article>
-          </li>
-          <li className="news__item">
-            <article className="post">
-              <div className="post__eyecatch" style={{ backgroundImage: `url(${PostEyecatch})` }}></div>
-              <div className="post__date">2019.06.19</div>
-              <h4 className="post__title">サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト</h4>
-            </article>
-          </li>
-          <li className="news__item">
-            <article className="post">
-              <div className="post__eyecatch" style={{ backgroundImage: `url(${PostEyecatch})` }}></div>
-              <div className="post__date">2019.06.19</div>
-              <h4 className="post__title">サンプルテキストサンプル ルテキストサンプルテキストサンプルテキストサンプル ルテキスト</h4>
-            </article>
-          </li>
+        <ul className={`news__list${isCollapsed}`} style={{height: theHeight}}>
+          {ArticleData.map((article, index) => (
+            <li className="news__item" key={index}>
+              <Article article={article} />
+            </li>
+          ))}
         </ul>
       </div>
       <div className="news__load-more">
-        <button className="btn">load more</button>
+        <button className="btn" onClick={loadMoreHandler}>{text}</button>
       </div>
     </section>
   )

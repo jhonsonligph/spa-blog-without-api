@@ -14,9 +14,12 @@
   }
 
   &__list {
+    overflow: hidden;
     display: flex;
     flex-wrap: wrap;
     margin: -30px -25px;
+    height: 972px;
+    transition: height 1s ease-in-out;
   }
 
   &__item {

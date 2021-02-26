@@ -3,6 +3,10 @@ import FooterLOGO from '../img/footer-logo.png';
 import GotoTOP from '../img/slider-arrow.png';
 
 const Footer = props => {
+  const scrollTop = () =>{
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
   return (
     <footer className="footer">
       <div className="footer__info">
@@ -14,7 +18,7 @@ const Footer = props => {
               サンプルテキストサンプル ルテキスト
             </p>
           </div>
-          <div className="footer__goto-top">
+          <div className="footer__goto-top" onClick={scrollTop}>
             <img src={GotoTOP} alt="Back to Top" />
             top
           </div>
