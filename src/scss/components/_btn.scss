@@ -20,9 +20,9 @@
     font-size: 18px;
     color: #000;
     background-color: transparent;
+  }
 
-    // &:hover {
-    //   cursor: pointer;
-    // }
+  &.btn--submit {
+    width: 210px;
   }
 }

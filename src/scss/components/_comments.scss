@@ -1,0 +1,60 @@
+.comments {
+  margin-top: 60px;
+
+  &__head {
+    text-transform: uppercase;
+    font-family: $font-montserrat;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 0.1em;
+    padding-bottom: 78px;
+  }
+
+  &__container {
+
+  }
+
+  &__list {
+
+    &-item {
+      background-color: #F5F5F5;
+      padding: 60px 40px 53px;
+
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__body {
+    font-size: 18px;
+    letter-spacing: .1em;
+    line-height: 2.22;
+  }
+
+  &__date {
+    font-family: $font-montserrat;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: .1em;
+  }
+
+  &__form {
+
+    form {
+      textarea {
+        display: block;
+        width: 100%;
+        font-family: $font-montserrat;
+        font-size: 19px;
+        font-style: italic;
+        letter-spacing: .1em;
+        border: thin solid black;
+      }
+
+      input[type="submit"] {
+        margin-left: auto;
+      }
+    }
+  }
+}

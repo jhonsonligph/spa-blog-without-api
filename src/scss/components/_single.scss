@@ -7,7 +7,39 @@
 
   &__published {
     font-family: $font-montserrat;
+    letter-spacing: .2em;
+    font-size: 20px;
     
-    
+  }
+
+  &__title {
+    margin-top: 35px;
+    font-size: 40px;
+    letter-spacing: .1em;
+    font-weight: bold;
+    line-height: 1.65;
+  }
+
+  &__eyecatch {
+    margin-top: 43px;
+    height: 540px;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    margin-top: 60px;
+    font-size: 18px;
+    letter-spacing: .1em;
+    line-height: 2.22;
+    padding-bottom: 130px;
+    border-bottom: thin solid #707070;
+
+    p {
+      &:not(:first-child) {
+        padding-top: 60px
+      }
+    }
   }
 }
