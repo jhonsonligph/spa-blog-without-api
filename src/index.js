@@ -5,14 +5,16 @@ import './scss/style.scss';
 import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import rootReducer from './reducers/rootReducer';
+import rootReducers from './reducers';
 
-// import * as serviceWorker from './serviceWorker';
+// STORE
+const store = createStore(
+  rootReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  );
 
-
-const store = createStore(rootReducer);
-
-// }
+// DISPATCH
+// store.dispatch(increment())
 
 ReactDOM.render(
   <React.StrictMode>

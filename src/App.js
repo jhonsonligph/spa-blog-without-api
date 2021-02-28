@@ -18,7 +18,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/posts/:postId' component={SinglePage}/>
+          <Route exact path='/:postId' component={SinglePage}/>
         </Switch>
         <Footer />
       </Router>

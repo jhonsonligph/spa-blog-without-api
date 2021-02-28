@@ -25,4 +25,9 @@
   &.btn--submit {
     width: 210px;
   }
+
+  &__form {
+    @extend .btn;
+    width: 100%;
+  }
 }
