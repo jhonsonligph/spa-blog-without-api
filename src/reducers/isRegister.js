@@ -1,4 +1,4 @@
-const regsiterReducer = (state = false, action) => {
+const registerReducer = (state = false, action) => {
   switch(action.type) {
     case 'REGISTER':
       return !state
@@ -7,4 +7,4 @@ const regsiterReducer = (state = false, action) => {
   }
 }
 
-export default regsiterReducer
+export default registerReducer

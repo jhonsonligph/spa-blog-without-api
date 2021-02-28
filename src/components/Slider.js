@@ -1,20 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import EyeCatch from '../img/blogpost-mv.png';
-import ArticleData from '../data/articles.json'
-
-
 const Slider = props => {
 
-  const [index, setIndex] = useState(0)
-
-  const dotClicked = e => {
-    setIndex(e.target.dataset.indexs)
-  }
   return (
     <>
       <section className="slider">
         <ul className="slider__list">
-          {/* {ArticleData.map(({ id, title, published, content, comments, eyecatch })=>( */}
             <li className="slider__list-item is-active">
               <article className="article" style={{ backgroundImage: `url(${EyeCatch})` }}>
                 <div className="article__wrapper">
@@ -31,12 +22,9 @@ const Slider = props => {
                 </div>
               </article>
             </li>
-          {/* // ))} */}
         </ul>
         <div className="slider__controls">
-        
-        <p>prev, next, pagination</p>
-        
+        {/* <p>prev, next, pagination</p> */}
         </div>
       </section> 
     </>
