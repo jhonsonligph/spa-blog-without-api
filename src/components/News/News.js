@@ -4,9 +4,7 @@ import ArticleData from '../../data/articles.json'
 
 const News = props => {
   const [collapsed, setCollapsed] = useState(false);
-  const loadMoreHandler = () => {
-    setCollapsed(prevState => !prevState)
-  }
+  const loadMoreHandler = () => setCollapsed(prevState => !prevState)
   const isCollapsed = collapsed ? ' is-collapsed' : ''
   const theHeight = collapsed ? 1944 : 972
   const text = collapsed ? 'hide':'load more'

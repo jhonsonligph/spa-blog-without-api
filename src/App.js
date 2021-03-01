@@ -1,7 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-// import Slider from './components/Slider';
-// import News from './components/News/News';
 import Home from './page/HomePage'
 import SinglePage from './page/SinglePage'
 import Footer from './components/Footer';

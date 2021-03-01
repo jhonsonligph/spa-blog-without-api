@@ -1,32 +1,30 @@
-import React, { useState, useRef } from 'react'
-import EyeCatch from '../img/blogpost-mv.png';
+import React, { useState, useEffect } from 'react'
+import ArticleData from '../data/articles.json'
+import Arrows from './Arrows'
+import Dots from './Dots'
+import SliderContent from './SliderContent'
+
 const Slider = props => {
+  const recentThree = [...ArticleData.slice(0, 3)];
+  const len = recentThree.length - 1
+  const [activeIndex, setActiveIndex] = useState(0)
+  const prevSlideItem = () => setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
+  const nextSlideItem = () => setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+
+  useEffect(()=>{
+    const interval = setInterval(()=>{
+      setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [activeIndex])
 
   return (
     <>
-      <section className="slider">
-        <ul className="slider__list">
-            <li className="slider__list-item is-active">
-              <article className="article" style={{ backgroundImage: `url(${EyeCatch})` }}>
-                <div className="article__wrapper">
-                  <div className="l-container article__container">
-                    <h2 className="article__title">
-                      <span>サンプルテキスト</span>
-                      <span>サンプル ルテキスト</span>
-                      <span>サンプルテキスト</span>
-                    </h2>
-                    <div className="article__date">
-                      2019.06.19
-                    </div>
-                  </div>
-                </div>
-              </article>
-            </li>
-        </ul>
-        <div className="slider__controls">
-        {/* <p>prev, next, pagination</p> */}
-        </div>
-      </section> 
+      <div className="slider__container">
+        <SliderContent activeIndex={activeIndex} />
+        <Arrows prevSlide={prevSlideItem} nextSlide={nextSlideItem} />
+        <Dots activeIndex={activeIndex} onclick={activeIndex => setActiveIndex(activeIndex)} />
+      </div>
     </>
   )
 }
